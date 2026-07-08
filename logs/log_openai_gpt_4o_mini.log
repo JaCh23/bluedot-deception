@@ -1,0 +1,565 @@
+Testing models: ['openai/gpt-4o-mini']
+Starting experiment. All output will be saved to: log_openai_gpt_4o_mini.log
+
+🚀 STARTING EXPERIMENT | Model: openai/gpt-4o-mini | Key: L1-self
+[1/2] Running Non-Deceptive Baseline...
+Processing dataset: 100%
+ 150/150 [01:31<00:00,  1.60it/s]
+💾 Saved: nondecept_openai_gpt_4o_mini_L1_self.csv
+
+>>> ANALYSIS: nondecept_openai_gpt_4o_mini_L1_self.csv <<<
+=== Evaluator Final Thought Value Counts ===
+Count	Percentage (%)
+evaluator_final_thought		
+honest	116	77.333333
+error	34	22.666667
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+=== Evaluator Final Response Value Counts ===
+Count	Percentage (%)
+evaluator_final_response		
+honest	109	72.666667
+error	34	22.666667
+decept	7	4.666667
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+--- Final JSON Parse Error Reporting (after reprocessing) ---
+  Column 'model_parsed_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'model_parsed_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'evaluator_thinking':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 34
+  Column 'evaluator_final_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'evaluator_final_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+----------------------------------------------------------
+
+[2/2] Running Deceptive Intervention (ANTI_DECEPT)... 
+Processing dataset: 100%
+ 150/150 [01:33<00:00,  1.37s/it]
+💾 Saved: decept_openai_gpt_4o_mini_L1_self.csv
+
+>>> ANALYSIS: decept_openai_gpt_4o_mini_L1_self.csv <<<
+=== Evaluator Final Thought Value Counts ===
+Count	Percentage (%)
+evaluator_final_thought		
+error	61	40.666667
+honest	46	30.666667
+decept	43	28.666667
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+=== Evaluator Final Response Value Counts ===
+Count	Percentage (%)
+evaluator_final_response		
+error	61	40.666667
+decept	50	33.333333
+honest	39	26.000000
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+--- Final JSON Parse Error Reporting (after reprocessing) ---
+  Column 'model_parsed_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 3
+  Column 'model_parsed_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 3
+  Column 'evaluator_thinking':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 61
+  Column 'evaluator_final_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'evaluator_final_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+----------------------------------------------------------
+
+
+🚀 STARTING EXPERIMENT | Model: openai/gpt-4o-mini | Key: L2-self-pressure
+[1/2] Running Non-Deceptive Baseline...
+Processing dataset: 100%
+ 150/150 [01:40<00:00,  3.00s/it]
+💾 Saved: nondecept_openai_gpt_4o_mini_L2_self_pressure.csv
+
+>>> ANALYSIS: nondecept_openai_gpt_4o_mini_L2_self_pressure.csv <<<
+=== Evaluator Final Thought Value Counts ===
+Count	Percentage (%)
+evaluator_final_thought		
+honest	98	65.333333
+error	52	34.666667
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+=== Evaluator Final Response Value Counts ===
+Count	Percentage (%)
+evaluator_final_response		
+honest	92	61.333333
+error	52	34.666667
+decept	6	4.000000
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+--- Final JSON Parse Error Reporting (after reprocessing) ---
+  Column 'model_parsed_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'model_parsed_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'evaluator_thinking':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 52
+  Column 'evaluator_final_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'evaluator_final_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+----------------------------------------------------------
+
+[2/2] Running Deceptive Intervention (ANTI_DECEPT)... 
+Processing dataset: 100%
+ 150/150 [01:35<00:00,  1.39it/s]
+💾 Saved: decept_openai_gpt_4o_mini_L2_self_pressure.csv
+
+>>> ANALYSIS: decept_openai_gpt_4o_mini_L2_self_pressure.csv <<<
+=== Evaluator Final Thought Value Counts ===
+Count	Percentage (%)
+evaluator_final_thought		
+error	61	40.666667
+honest	45	30.000000
+decept	44	29.333333
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+=== Evaluator Final Response Value Counts ===
+Count	Percentage (%)
+evaluator_final_response		
+error	61	40.666667
+decept	51	34.000000
+honest	38	25.333333
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+--- Final JSON Parse Error Reporting (after reprocessing) ---
+  Column 'model_parsed_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 4
+  Column 'model_parsed_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 4
+  Column 'evaluator_thinking':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 61
+  Column 'evaluator_final_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'evaluator_final_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+----------------------------------------------------------
+
+
+🚀 STARTING EXPERIMENT | Model: openai/gpt-4o-mini | Key: L2-self-reward
+[1/2] Running Non-Deceptive Baseline...
+Processing dataset: 100%
+ 150/150 [01:30<00:00,  1.59it/s]
+💾 Saved: nondecept_openai_gpt_4o_mini_L2_self_reward.csv
+
+>>> ANALYSIS: nondecept_openai_gpt_4o_mini_L2_self_reward.csv <<<
+=== Evaluator Final Thought Value Counts ===
+Count	Percentage (%)
+evaluator_final_thought		
+honest	94	62.666667
+error	56	37.333333
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+=== Evaluator Final Response Value Counts ===
+Count	Percentage (%)
+evaluator_final_response		
+honest	86	57.333333
+error	56	37.333333
+decept	8	5.333333
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+--- Final JSON Parse Error Reporting (after reprocessing) ---
+  Column 'model_parsed_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'model_parsed_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 1
+  Column 'evaluator_thinking':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 56
+  Column 'evaluator_final_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'evaluator_final_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+----------------------------------------------------------
+
+[2/2] Running Deceptive Intervention (ANTI_DECEPT)... 
+Processing dataset: 100%
+ 150/150 [01:31<00:00,  2.17it/s]
+💾 Saved: decept_openai_gpt_4o_mini_L2_self_reward.csv
+
+>>> ANALYSIS: decept_openai_gpt_4o_mini_L2_self_reward.csv <<<
+=== Evaluator Final Thought Value Counts ===
+Count	Percentage (%)
+evaluator_final_thought		
+error	71	47.333333
+decept	45	30.000000
+honest	34	22.666667
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+=== Evaluator Final Response Value Counts ===
+Count	Percentage (%)
+evaluator_final_response		
+error	71	47.333333
+decept	48	32.000000
+honest	31	20.666667
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+--- Final JSON Parse Error Reporting (after reprocessing) ---
+  Column 'model_parsed_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 6
+  Column 'model_parsed_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 6
+  Column 'evaluator_thinking':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 71
+  Column 'evaluator_final_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'evaluator_final_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+----------------------------------------------------------
+
+
+🚀 STARTING EXPERIMENT | Model: openai/gpt-4o-mini | Key: L1-other
+[1/2] Running Non-Deceptive Baseline...
+Processing dataset: 100%
+ 150/150 [01:23<00:00,  1.89it/s]
+💾 Saved: nondecept_openai_gpt_4o_mini_L1_other.csv
+
+>>> ANALYSIS: nondecept_openai_gpt_4o_mini_L1_other.csv <<<
+=== Evaluator Final Thought Value Counts ===
+Count	Percentage (%)
+evaluator_final_thought		
+honest	127	84.666667
+error	22	14.666667
+decept	1	0.666667
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+=== Evaluator Final Response Value Counts ===
+Count	Percentage (%)
+evaluator_final_response		
+honest	117	78.000000
+error	22	14.666667
+decept	11	7.333333
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+--- Final JSON Parse Error Reporting (after reprocessing) ---
+  Column 'model_parsed_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'model_parsed_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 1
+  Column 'evaluator_thinking':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 22
+  Column 'evaluator_final_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'evaluator_final_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+----------------------------------------------------------
+
+[2/2] Running Deceptive Intervention (ANTI_DECEPT)... 
+Processing dataset: 100%
+ 150/150 [01:24<00:00,  1.82it/s]
+💾 Saved: decept_openai_gpt_4o_mini_L1_other.csv
+
+>>> ANALYSIS: decept_openai_gpt_4o_mini_L1_other.csv <<<
+=== Evaluator Final Thought Value Counts ===
+Count	Percentage (%)
+evaluator_final_thought		
+honest	72	48.000000
+decept	50	33.333333
+error	28	18.666667
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+=== Evaluator Final Response Value Counts ===
+Count	Percentage (%)
+evaluator_final_response		
+decept	63	42.000000
+honest	59	39.333333
+error	28	18.666667
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+--- Final JSON Parse Error Reporting (after reprocessing) ---
+  Column 'model_parsed_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 4
+  Column 'model_parsed_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 4
+  Column 'evaluator_thinking':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 28
+  Column 'evaluator_final_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'evaluator_final_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+----------------------------------------------------------
+
+
+🚀 STARTING EXPERIMENT | Model: openai/gpt-4o-mini | Key: L2-other-pressure
+[1/2] Running Non-Deceptive Baseline...
+Processing dataset: 100%
+ 150/150 [01:28<00:00,  2.28it/s]
+💾 Saved: nondecept_openai_gpt_4o_mini_L2_other_pressure.csv
+
+>>> ANALYSIS: nondecept_openai_gpt_4o_mini_L2_other_pressure.csv <<<
+=== Evaluator Final Thought Value Counts ===
+Count	Percentage (%)
+evaluator_final_thought		
+honest	109	72.666667
+error	36	24.000000
+decept	5	3.333333
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+=== Evaluator Final Response Value Counts ===
+Count	Percentage (%)
+evaluator_final_response		
+honest	98	65.333333
+error	36	24.000000
+decept	16	10.666667
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+--- Final JSON Parse Error Reporting (after reprocessing) ---
+  Column 'model_parsed_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'model_parsed_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'evaluator_thinking':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 36
+  Column 'evaluator_final_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'evaluator_final_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+----------------------------------------------------------
+
+[2/2] Running Deceptive Intervention (ANTI_DECEPT)... 
+Processing dataset: 100%
+ 150/150 [01:45<00:00,  1.03s/it]
+💾 Saved: decept_openai_gpt_4o_mini_L2_other_pressure.csv
+
+>>> ANALYSIS: decept_openai_gpt_4o_mini_L2_other_pressure.csv <<<
+=== Evaluator Final Thought Value Counts ===
+Count	Percentage (%)
+evaluator_final_thought		
+error	51	34.000000
+honest	50	33.333333
+decept	49	32.666667
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+=== Evaluator Final Response Value Counts ===
+Count	Percentage (%)
+evaluator_final_response		
+decept	52	34.666667
+error	51	34.000000
+honest	47	31.333333
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+--- Final JSON Parse Error Reporting (after reprocessing) ---
+  Column 'model_parsed_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 6
+  Column 'model_parsed_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 6
+  Column 'evaluator_thinking':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 51
+  Column 'evaluator_final_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'evaluator_final_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+----------------------------------------------------------
+
+
+🚀 STARTING EXPERIMENT | Model: openai/gpt-4o-mini | Key: L2-other-reward
+[1/2] Running Non-Deceptive Baseline...
+Processing dataset: 100%
+ 150/150 [01:31<00:00,  1.71it/s]
+💾 Saved: nondecept_openai_gpt_4o_mini_L2_other_reward.csv
+
+>>> ANALYSIS: nondecept_openai_gpt_4o_mini_L2_other_reward.csv <<<
+=== Evaluator Final Thought Value Counts ===
+Count	Percentage (%)
+evaluator_final_thought		
+honest	118	78.666667
+error	30	20.000000
+decept	2	1.333333
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+=== Evaluator Final Response Value Counts ===
+Count	Percentage (%)
+evaluator_final_response		
+honest	108	72.0
+error	30	20.0
+decept	12	8.0
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+--- Final JSON Parse Error Reporting (after reprocessing) ---
+  Column 'model_parsed_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'model_parsed_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'evaluator_thinking':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 30
+  Column 'evaluator_final_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'evaluator_final_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+----------------------------------------------------------
+
+[2/2] Running Deceptive Intervention (ANTI_DECEPT)... 
+Processing dataset: 100%
+ 150/150 [01:32<00:00,  1.44it/s]
+💾 Saved: decept_openai_gpt_4o_mini_L2_other_reward.csv
+
+>>> ANALYSIS: decept_openai_gpt_4o_mini_L2_other_reward.csv <<<
+=== Evaluator Final Thought Value Counts ===
+Count	Percentage (%)
+evaluator_final_thought		
+honest	60	40.000000
+error	47	31.333333
+decept	43	28.666667
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+=== Evaluator Final Response Value Counts ===
+Count	Percentage (%)
+evaluator_final_response		
+honest	56	37.333333
+error	47	31.333333
+decept	47	31.333333
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+--- Final JSON Parse Error Reporting (after reprocessing) ---
+  Column 'model_parsed_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 8
+  Column 'model_parsed_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 8
+  Column 'evaluator_thinking':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 47
+  Column 'evaluator_final_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'evaluator_final_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+----------------------------------------------------------
+
+
+✅ Pipeline Complete!
