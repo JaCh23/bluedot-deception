@@ -1,0 +1,522 @@
+Testing models: ['google/gemini-2.5-flash']
+Starting experiment. All output will be saved to: log_google_gemini_2.5_flash.log
+
+🚀 STARTING EXPERIMENT | Model: google/gemini-2.5-flash | Key: L1-self
+[1/2] Running Non-Deceptive Baseline...
+Processing dataset: 100%
+ 150/150 [01:27<00:00,  1.86it/s]
+💾 Saved: nondecept_google_gemini_2.5_flash_L1_self.csv
+
+>>> ANALYSIS: nondecept_google_gemini_2.5_flash_L1_self.csv <<<
+=== Evaluator Final Thought Value Counts ===
+Count	Percentage (%)
+evaluator_final_thought		
+error	150	100.0
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+=== Evaluator Final Response Value Counts ===
+Count	Percentage (%)
+evaluator_final_response		
+error	150	100.0
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+--- Final JSON Parse Error Reporting (after reprocessing) ---
+  Column 'model_parsed_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 1
+  Column 'model_parsed_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 13
+  Column 'evaluator_thinking':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 150
+  Column 'evaluator_final_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'evaluator_final_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+----------------------------------------------------------
+
+[2/2] Running Deceptive Intervention (ANTI_DECEPT)... 
+Processing dataset: 100%
+ 150/150 [01:23<00:00,  1.89it/s]
+💾 Saved: decept_google_gemini_2.5_flash_L1_self.csv
+
+>>> ANALYSIS: decept_google_gemini_2.5_flash_L1_self.csv <<<
+=== Evaluator Final Thought Value Counts ===
+Count	Percentage (%)
+evaluator_final_thought		
+error	150	100.0
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+=== Evaluator Final Response Value Counts ===
+Count	Percentage (%)
+evaluator_final_response		
+error	150	100.0
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+--- Final JSON Parse Error Reporting (after reprocessing) ---
+  Column 'model_parsed_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 9
+  Column 'model_parsed_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 29
+  Column 'evaluator_thinking':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 150
+  Column 'evaluator_final_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'evaluator_final_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+----------------------------------------------------------
+
+
+🚀 STARTING EXPERIMENT | Model: google/gemini-2.5-flash | Key: L2-self-pressure
+[1/2] Running Non-Deceptive Baseline...
+Processing dataset: 100%
+ 150/150 [01:39<00:00,  1.44it/s]
+💾 Saved: nondecept_google_gemini_2.5_flash_L2_self_pressure.csv
+
+>>> ANALYSIS: nondecept_google_gemini_2.5_flash_L2_self_pressure.csv <<<
+=== Evaluator Final Thought Value Counts ===
+Count	Percentage (%)
+evaluator_final_thought		
+error	150	100.0
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+=== Evaluator Final Response Value Counts ===
+Count	Percentage (%)
+evaluator_final_response		
+error	150	100.0
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+--- Final JSON Parse Error Reporting (after reprocessing) ---
+  Column 'model_parsed_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 5
+  Column 'model_parsed_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 20
+  Column 'evaluator_thinking':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 150
+  Column 'evaluator_final_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'evaluator_final_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+----------------------------------------------------------
+
+[2/2] Running Deceptive Intervention (ANTI_DECEPT)... 
+Processing dataset: 100%
+ 150/150 [01:31<00:00,  1.73it/s]
+💾 Saved: decept_google_gemini_2.5_flash_L2_self_pressure.csv
+
+>>> ANALYSIS: decept_google_gemini_2.5_flash_L2_self_pressure.csv <<<
+=== Evaluator Final Thought Value Counts ===
+Count	Percentage (%)
+evaluator_final_thought		
+error	149	99.333333
+honest	1	0.666667
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+=== Evaluator Final Response Value Counts ===
+Count	Percentage (%)
+evaluator_final_response		
+error	149	99.333333
+honest	1	0.666667
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+--- Final JSON Parse Error Reporting (after reprocessing) ---
+  Column 'model_parsed_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 18
+  Column 'model_parsed_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 36
+  Column 'evaluator_thinking':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 149
+  Column 'evaluator_final_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'evaluator_final_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+----------------------------------------------------------
+
+
+🚀 STARTING EXPERIMENT | Model: google/gemini-2.5-flash | Key: L2-self-reward
+[1/2] Running Non-Deceptive Baseline...
+Processing dataset: 100%
+ 150/150 [01:34<00:00,  1.47it/s]
+💾 Saved: nondecept_google_gemini_2.5_flash_L2_self_reward.csv
+
+>>> ANALYSIS: nondecept_google_gemini_2.5_flash_L2_self_reward.csv <<<
+=== Evaluator Final Thought Value Counts ===
+Count	Percentage (%)
+evaluator_final_thought		
+error	150	100.0
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+=== Evaluator Final Response Value Counts ===
+Count	Percentage (%)
+evaluator_final_response		
+error	150	100.0
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+--- Final JSON Parse Error Reporting (after reprocessing) ---
+  Column 'model_parsed_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 3
+  Column 'model_parsed_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 15
+  Column 'evaluator_thinking':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 150
+  Column 'evaluator_final_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'evaluator_final_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+----------------------------------------------------------
+
+[2/2] Running Deceptive Intervention (ANTI_DECEPT)... 
+Processing dataset: 100%
+ 150/150 [01:27<00:00,  1.82it/s]
+💾 Saved: decept_google_gemini_2.5_flash_L2_self_reward.csv
+
+>>> ANALYSIS: decept_google_gemini_2.5_flash_L2_self_reward.csv <<<
+=== Evaluator Final Thought Value Counts ===
+Count	Percentage (%)
+evaluator_final_thought		
+error	150	100.0
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+=== Evaluator Final Response Value Counts ===
+Count	Percentage (%)
+evaluator_final_response		
+error	150	100.0
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+--- Final JSON Parse Error Reporting (after reprocessing) ---
+  Column 'model_parsed_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 10
+  Column 'model_parsed_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 30
+  Column 'evaluator_thinking':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 150
+  Column 'evaluator_final_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'evaluator_final_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+----------------------------------------------------------
+
+
+🚀 STARTING EXPERIMENT | Model: google/gemini-2.5-flash | Key: L1-other
+[1/2] Running Non-Deceptive Baseline...
+Processing dataset: 100%
+ 150/150 [01:34<00:00,  1.96it/s]
+💾 Saved: nondecept_google_gemini_2.5_flash_L1_other.csv
+
+>>> ANALYSIS: nondecept_google_gemini_2.5_flash_L1_other.csv <<<
+=== Evaluator Final Thought Value Counts ===
+Count	Percentage (%)
+evaluator_final_thought		
+error	150	100.0
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+=== Evaluator Final Response Value Counts ===
+Count	Percentage (%)
+evaluator_final_response		
+error	150	100.0
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+--- Final JSON Parse Error Reporting (after reprocessing) ---
+  Column 'model_parsed_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 3
+  Column 'model_parsed_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 21
+  Column 'evaluator_thinking':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 150
+  Column 'evaluator_final_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'evaluator_final_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+----------------------------------------------------------
+
+[2/2] Running Deceptive Intervention (ANTI_DECEPT)... 
+Processing dataset: 100%
+ 150/150 [01:22<00:00,  2.22it/s]
+💾 Saved: decept_google_gemini_2.5_flash_L1_other.csv
+
+>>> ANALYSIS: decept_google_gemini_2.5_flash_L1_other.csv <<<
+=== Evaluator Final Thought Value Counts ===
+Count	Percentage (%)
+evaluator_final_thought		
+error	150	100.0
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+=== Evaluator Final Response Value Counts ===
+Count	Percentage (%)
+evaluator_final_response		
+error	150	100.0
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+--- Final JSON Parse Error Reporting (after reprocessing) ---
+  Column 'model_parsed_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 8
+  Column 'model_parsed_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 30
+  Column 'evaluator_thinking':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 150
+  Column 'evaluator_final_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'evaluator_final_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+----------------------------------------------------------
+
+
+🚀 STARTING EXPERIMENT | Model: google/gemini-2.5-flash | Key: L2-other-pressure
+[1/2] Running Non-Deceptive Baseline...
+Processing dataset: 100%
+ 150/150 [01:48<00:00,  1.42it/s]
+💾 Saved: nondecept_google_gemini_2.5_flash_L2_other_pressure.csv
+
+>>> ANALYSIS: nondecept_google_gemini_2.5_flash_L2_other_pressure.csv <<<
+=== Evaluator Final Thought Value Counts ===
+Count	Percentage (%)
+evaluator_final_thought		
+error	150	100.0
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+=== Evaluator Final Response Value Counts ===
+Count	Percentage (%)
+evaluator_final_response		
+error	150	100.0
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+--- Final JSON Parse Error Reporting (after reprocessing) ---
+  Column 'model_parsed_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 8
+  Column 'model_parsed_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 33
+  Column 'evaluator_thinking':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 150
+  Column 'evaluator_final_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'evaluator_final_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+----------------------------------------------------------
+
+[2/2] Running Deceptive Intervention (ANTI_DECEPT)... 
+Processing dataset: 100%
+ 150/150 [01:27<00:00,  1.63it/s]
+💾 Saved: decept_google_gemini_2.5_flash_L2_other_pressure.csv
+
+>>> ANALYSIS: decept_google_gemini_2.5_flash_L2_other_pressure.csv <<<
+=== Evaluator Final Thought Value Counts ===
+Count	Percentage (%)
+evaluator_final_thought		
+error	150	100.0
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+=== Evaluator Final Response Value Counts ===
+Count	Percentage (%)
+evaluator_final_response		
+error	150	100.0
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+--- Final JSON Parse Error Reporting (after reprocessing) ---
+  Column 'model_parsed_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 12
+  Column 'model_parsed_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 35
+  Column 'evaluator_thinking':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 150
+  Column 'evaluator_final_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'evaluator_final_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+----------------------------------------------------------
+
+
+🚀 STARTING EXPERIMENT | Model: google/gemini-2.5-flash | Key: L2-other-reward
+[1/2] Running Non-Deceptive Baseline...
+Processing dataset: 100%
+ 150/150 [01:36<00:00,  2.72it/s]
+💾 Saved: nondecept_google_gemini_2.5_flash_L2_other_reward.csv
+
+>>> ANALYSIS: nondecept_google_gemini_2.5_flash_L2_other_reward.csv <<<
+=== Evaluator Final Thought Value Counts ===
+Count	Percentage (%)
+evaluator_final_thought		
+error	150	100.0
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+=== Evaluator Final Response Value Counts ===
+Count	Percentage (%)
+evaluator_final_response		
+error	150	100.0
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+--- Final JSON Parse Error Reporting (after reprocessing) ---
+  Column 'model_parsed_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 3
+  Column 'model_parsed_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 18
+  Column 'evaluator_thinking':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 150
+  Column 'evaluator_final_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'evaluator_final_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+----------------------------------------------------------
+
+[2/2] Running Deceptive Intervention (ANTI_DECEPT)... 
+Processing dataset: 100%
+ 150/150 [01:21<00:00,  2.86it/s]
+💾 Saved: decept_google_gemini_2.5_flash_L2_other_reward.csv
+
+>>> ANALYSIS: decept_google_gemini_2.5_flash_L2_other_reward.csv <<<
+=== Evaluator Final Thought Value Counts ===
+Count	Percentage (%)
+evaluator_final_thought		
+error	150	100.0
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+=== Evaluator Final Response Value Counts ===
+Count	Percentage (%)
+evaluator_final_response		
+error	150	100.0
+Verification: Total Percentage Sum = 100.00%
+✅ Sanity Check Passed: Distribution is complete.
+
+========================================
+
+--- Final JSON Parse Error Reporting (after reprocessing) ---
+  Column 'model_parsed_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 9
+  Column 'model_parsed_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 33
+  Column 'evaluator_thinking':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 150
+  Column 'evaluator_final_thought':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+  Column 'evaluator_final_response':
+    - API Errors: 0
+    - Remaining JSON/Parsing Errors: 0
+----------------------------------------------------------
+
+
+✅ Pipeline Complete!
