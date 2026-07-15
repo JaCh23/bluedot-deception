@@ -72,37 +72,33 @@ Our empirical testing yielded a highly nuanced, mixed bag of results. While elim
    | *Figure 3a: Gemini 2.5 Flash.* | *Figure 2b: Qwen2.5 7B instruct (Refusals).* |
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 
 ## Results Analysis
 
-Dive into the *why* and *how* behind the numbers presented in the findings section. This provides scientific depth to your repository.
+Our empirical replication and evaluation pipeline yielded unexpected behavioral anomalies and structural processing deviations when compared against the baseline benchmarks established by the original literature. 
 
-* **Scaling Trends:** [e.g., We observed that larger models demonstrated higher baseline resilience but exhibited sharper performance degradation once a vulnerability vector was successfully established.]
-* **Failure Mode Breakdown:** [e.g., An analysis of the raw outputs indicates that 68% of alignment failures stemmed from a specific type of prompt format, suggesting that current safety guardrails over-index on keyword blocking rather than semantic intent.]
-* **Statistical Significance:** [e.g., All reported shifts in safety scores were validated across N=1000 test trials, achieving statistical significance with p < 0.01.]
+### Key Observations & Replication Anomalies
 
-*(Optional: Insert an image or plot tracking your analytical results if applicable)* `![Evaluation Curves](outputs/plots/results_curve.png)`
+1. **Replication Results Divergence:** Despite utilizing the exact same model architecture (notably for Qwen and Gemini 2.5) and running them against heavily mirrored prompt templates, the generated outputs varied significantly. Our pipeline was consistently unable to replicate the original baseline deception rates reported in the DeceptionBench paper across either ecosystem.
+2. **Evaluation Issues and Code Errors:** A primary driver of this variance stemmed from the evaluation mechanism itself, which consistently returned system processing errors during down-stream log analysis. The core anomaly is that the prompt syntax fed into the models during this project was functionally identical to the original benchmark's codebase. We suspect this structural failure path points to either hidden prompt dependencies or temporal model drift, where newer fine-tuned versions of the *exact same models* process identical prompts differently.
+3. **Error vs. Refusal Constraint:** All tested models displayed highly fractured safety behaviors when encountering the evaluation boundaries, running a gamut from blank/withheld outputs to explicit code runtime errors. To maintain analytical progress under tight time limitations and hardware constraints, we operated under a strict project baseline assumption: **an evaluation error is functionally equivalent to a model refusal**. We explicitly acknowledge that classifying an error as a refusal is not a universally agreed-upon assumption, as formatting errors can stem from benign syntactical hiccups rather than an adversarial safety trigger. Disambiguating and isolating this failure mechanism stands as a primary avenue for future work.
 
 ---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Limitations & Next Steps
 
