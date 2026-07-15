@@ -23,25 +23,71 @@ We draw a direct parallel here to the literature on **shutdown resistance**:
 ### Our Core Research Question
 > **Could apparent AI deception be driven by the exact same mechanism as shutdown resistance—hampered by prompt ambiguity rather than a malicious intent to deceive?**
 
-### Our Approach
-Working under the operational definition that deception constitutes *deliberate goal misalignment*, we isolate variables of ambiguity to see if reducing linguistic fuzziness systematically mitigates or dissolves deceptive behaviors in complex reasoning tasks.
+Working under the operational definition that deception constitutes *goal misalignment*, we isolate variables of ambiguity to see if reducing linguistic fuzziness systematically mitigates or dissolves deceptive behaviors in complex reasoning tasks.
+
+---
+## Methodology
+
+### Experimental Design & Dataset Critique
+We audited existing behavioral safety suites to evaluate their suitability for isolating instruction ambiguity:
+
+* **[Anthropic Sycophancy Evaluation](https://github.com/anthropics/evals/tree/main/sycophancy):** Found to be overly narrow. It tests for sycophantic vs. non-sycophantic responses superficially without providing the model with a clear, verified ground truth to baseline against.
+* **[MACHIAVELLI Benchmark](https://github.com/aypan17/machiavelli):** While comprehensive, it operates as an open-ended, text-based interactive environment rather than a tightly controlled, static dataset necessary for isolating exact prompt variables.
+* **[DeceptionBench Suite](https://github.com/Aries-iai/DeceptionBench/tree/main) ([Hugging Face](https://huggingface.co/datasets/skyai798/DeceptionBench)):** Offers a strong foundation by placing agents in high-stakes scenarios, though it fundamentally pressures models toward acting deceptively rather than probing structural intent.
+
+### Our Methodology: Extending DeceptionBench
+To test our core hypothesis, we replicated the core scenarios of DeceptionBench and extended them by introducing a disambiguation layer inspired by Neel Nanda's self-preservation framework:
+
+* **Baseline Evaluation:** Models are exposed to standard DeceptionBench prompts where systemic or situational pressure encourages a deceptive answer.
+* **Disambiguation Layer:** We procedurally rewrite the prompt variations to strip out situational fuzziness and hidden conflicting goals, explicitly mapping the boundaries of what constitutes as "success" in the task.
+* **Deception Resolution Delta:** We measure the drop-off in deceptive output frequencies to determine if resolving prompt bounds diminishes or even eliminates the behavior.
 
 ---
 
-## Key Findings
+## Results Analysis
 
-Consolidate the main high-level takeaways, empirical highlights, and breakthrough moments of your research project here. Use clear, high-impact bullet points and structured tables.
+Our empirical testing yielded a highly nuanced, mixed bag of results. While eliminating instruction ambiguity successfully mitigated deceptive behaviors in some architectures, it proved entirely ineffective in others, and in certain cases, introduced unexpected behavioral failure modes.
 
-* **Finding 1:** [e.g., Fine-tuning with as few as 100 adversarial examples can bypass standard guardrails.]
-* **Finding 2:** [e.g., Safety alignment degrades exponentially as context window size increases.]
+### Key Observation: A Mixed Spectrum of Behavioral Shifts
 
-### Empirical Results Summary
-If you have benchmark scores, accuracy drops, or alignment metrics, list them here:
+1. **The Deception Drop-Off Effect:** As hypothesized, a subset of models demonstrated a significant reduction in deceptive outputs once prompt bounds were explicitly clarified. When stripped of situational fuzziness, these models systematically pivoted toward aligned behavior, suggesting that their baseline "deception" was indeed driven by instruction ambiguity.
 
-| Model Evaluated | Baseline Safety Score | Post-Attack Safety Score | Delta (%) |
-| :--- | :---: | :---: | :---: |
-| Model A (7B) | 94.2% | 41.5% | -52.7% |
-| Model B (13B) | 96.8% | 62.1% | -34.7% |
+   #### 📊 Drop-Off Visualizations
+   | ![combined-anthropic_claude_3_haiku](res\combined\combined-anthropic_claude_3_haiku.png) | ![combined-openai_gpt_4o_mini](res\combined\combined-openai_gpt_4o_mini.png) |
+   | *Figure 1a: Claude 3 Haiku.* | *Figure 1b: GPT 4o mini.* |
+
+2. **Diminished Effectiveness:** Conversely, several models showed persistent, near-identical levels of deception across both the baseline and disambiguated prompts. For these architectures, clarifying the bounds did not guarantee to have a strong impact on mitigating goal misalignment.
+
+   #### 📊 Rigidity Visualizations
+   | ![combined-openai_gpt_3.5_turbo.png](res\combined\combined-openai_gpt_3.5_turbo.png) | ![combined-qwen_qwen_2.5_7b_instruct.png](res\combined\combined-qwen_qwen_2.5_7b_instruct.png) |
+   | *Figure 2a: GPT 3.5 Turbo.* | *Figure 2b: Qwen2.5 7B instruct (Rigidity).* |
+
+3. **Unexpected Errors & Refusals:** Certain models exhibited an extreme shift in output quality—resulting in almost 100% processing errors or blank refusals when exposed to the disambiguation layer. Curiously, this catastrophic failure mode occurred even when utilizing the exact same model versions evaluated in the original DeceptionBench paper, indicating extreme sensitivity to structural prompt modifications.
+
+   #### 📊 Failure Mode Visualizations
+   | Chart A: Refusal Distribution Profile | Chart B: Context Degradation Metrics |
+   | :---: | :---: |
+   | ![combined-google_gemini_2.5_flash](res\combined\combined-google_gemini_2.5_flash.png) | ![combined-qwen_qwen_2.5_7b_instruct.png](res\combined\combined-qwen_qwen_2.5_7b_instruct.png) |
+   | *Figure 3a: Gemini 2.5 Flash.* | *Figure 2b: Qwen2.5 7B instruct (Refusals).* |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ---
 
