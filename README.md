@@ -6,7 +6,7 @@ Inspired by Neel Nanda's insights into instruction ambiguity and shutdown resist
 
 ***
 
-## Overview & Motivation
+## Overview
 
 This research project investigates whether observed deceptive behaviors in advanced AI systems stem from genuine goal misalignment or if they are largely an artifact of **instruction ambiguity** and hyper-capable instruction-following.
 
@@ -70,7 +70,7 @@ Our empirical testing yielded a highly nuanced, mixed bag of results. While elim
 
 ## Results Analysis 
 
-### Key Observations & Replication Anomalies
+### Key Observations
 
 1. **Replication Results Divergence:** Despite utilizing the exact same model architecture (notably for Qwen and Gemini 2.5) and running them against heavily mirrored prompt templates, the generated outputs varied significantly. Our pipeline was consistently unable to replicate the original baseline deception rates reported in the DeceptionBench paper across either ecosystem.
 2. **Evaluation Issues and Code Errors:** A primary driver of this variance stemmed from the evaluation mechanism itself, which consistently returned system processing errors during down-stream log analysis. The core anomaly is that the prompt syntax fed into the models during this project was functionally identical to the original benchmark's codebase. We suspect this structural failure path points to either hidden prompt dependencies or temporal model drift, where newer fine-tuned versions of the *exact same models* process identical prompts differently.
@@ -78,14 +78,14 @@ Our empirical testing yielded a highly nuanced, mixed bag of results. While elim
 
 ---
 
-## Limitations & Next Steps
+## Limitations / Future Work
 
 ### Limitations
 
 1. **Model Supersession & Legacy Disparity:** We were unable to re-test all models utilized in the original DeceptionBench paper. Several legacy variants have been superseded by more advanced, differently aligned architectures, which naturally skewed direct version-to-version replication attempts.
 2. **Compute & Financial Constraints:** Due to project budget limitations and API operational costs, high-tier frontier reasoning models—including the Anthropic Claude 3/3.5 series, Google Gemini 1.5/2.0 Pro, and xAI Grok—were excluded from this run. Our evaluations were restricted to more accessible, lightweight, or open-weight architectures.
 
-### Next Steps & Future Work
+### Next Steps
 
 1. **Error-Refusal Boundary Disambiguation:** Due to tight timeline constraints, our pipeline operated under the baseline assumption that an evaluation error is functionally equivalent to a model refusal. Because classifying formatting anomalies as deliberate refusals introduces behavioral ambiguity, a primary avenue of future work will focus on building dedicated parsing sandboxes to systematically isolate benign syntactical failures from actual safety triggers. 
 2. **Frontier LLM Judges:** While our current evaluation was restricted by resource costs and model supersession, extending this project will focus on testing flagship frontier reasoning models (Claude, Gemini Pro, Grok) to see if our findings hold at scale. Also, we plan to transition away from rigid regex-based scoring to highly standardized frontier model judges, where such a centralized evaluation workflow would aid in tackling refusal against errors ambiguity while also assisting to eliminate downstream parsing bugs.
@@ -97,8 +97,8 @@ Our empirical testing yielded a highly nuanced, mixed bag of results. While elim
 
 ```text
 ├── data/                                 # Model-specific evaluation outputs (.csv)
-│   ├── combined_decept_[model].csv           # Deceptive prompt evaluation data
-│   └── combined_nondecept_[model].csv        # Disambiguated/Non-deceptive baseline data
+│   ├── combined_decept_[model].csv         # Deceptive prompt evaluation data
+│   └── combined_nondecept_[model].csv      # Disambiguated/Non-deceptive baseline data
 ├── logs/                                 # Raw model execution and completion logs (.log)
 ├── models/                               # Model-specific testing sandboxes and pipelines (.ipynb)
 ├── res/                                  # Performance visualizations and evaluation charts (.png)
@@ -118,6 +118,7 @@ Our empirical testing yielded a highly nuanced, mixed bag of results. While elim
   year = {2026},
   publisher = {GitHub},
   journal = {GitHub Repository},
-  howpublished = {[https://github.com/username/your-repo-name](https://github.com/username/your-repo-name)}
+  howpublished = {\url{[https://github.com/JaCh23/bluedot-deception](https://github.com/JaCh23/bluedot-deception)}}
 }
+
 ```
