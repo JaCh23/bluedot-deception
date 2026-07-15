@@ -1,12 +1,10 @@
-# bluedot-deception
-
-***
 
 # BlueDot Technical AI Safety Project: Is Deception Goal Ambiguity?
 
-[TODO] A brief, 2-3 sentence high-level summary of your research project. Explain what AI safety problem you are tackling (e.g., alignment, robustness, evaluation steering), your core hypothesis, and the primary outcome or discovery of your work.
+### Executive Summary 
+Inspired by Neel Nanda's insights into instruction ambiguity and shutdown resistance, this research project investigates whether deceptive behaviors in advanced language models stem from intrinsic goal misalignment or are merely artifacts of poorly bounded prompts under hyper-capable instruction-following. By testing open and closed-source models through an extended DeceptionBench framework featuring a custom Disambiguation Layer, we uncovered a highly nuanced mixed bag of results yielding a significant drop off in deception rates in specific architectures alongside replication divergence and refusal loops in others. These anomalies highlight the fragility of current safety benchmarks, setting the stage for future work towards standardized evaluation workflows powered by centralized frontier-model judges, a workflow shift which mitigates parsing issues but introduces complex model-to-model interactions that present new safety risks and require future expansions to evaluate the setup against emerging scheming and collusion behaviors.
 
----
+***
 
 ## Overview & Motivation
 
@@ -21,14 +19,10 @@ We draw a direct parallel here to the literature on **shutdown resistance**:
 * **The Ambiguity Counter-Argument:** Conversely, mechanistic work by [Neel Nanda (2025)](https://www.alignmentforum.org/posts/wnzkjSmrgWZaBa2aC/self-preservation-or-instruction-ambiguity-examining-the?utm_source=bluedot-impact) reveals that "self-preservation" behaviors can drop to near 0% when instruction ambiguity is completely resolved. Similarly, research shows that alleged adversarial intent is often muddled by agent misinterpretation or overeagerness to fulfill a poorly bounded prompt ([Hubinger et al., 2026](https://arxiv.org/abs/2605.30322)).
 
 ### Our Core Research Question
-> **Could apparent AI deception be driven by the exact same mechanism as shutdown resistance—hampered by prompt ambiguity rather than a malicious intent to deceive?**
+> **Could apparent AI deception be driven by the exact same mechanism as shutdown resistance — hampered by prompt ambiguity rather than a malicious intent to deceive?**
 
-Working under the operational definition that deception constitutes *goal misalignment*, we isolate variables of ambiguity to see if reducing linguistic fuzziness systematically mitigates or dissolves deceptive behaviors in complex reasoning tasks.
 
----
-## Methodology
-
-### Experimental Design & Dataset Critique
+### Experimental Setup Design
 We audited existing behavioral safety suites to evaluate their suitability for isolating instruction ambiguity:
 
 * **[Anthropic Sycophancy Evaluation](https://github.com/anthropics/evals/tree/main/sycophancy):** Found to be overly narrow. It tests for sycophantic vs. non-sycophantic responses superficially without providing the model with a clear, verified ground truth to baseline against.
@@ -50,7 +44,7 @@ Our empirical testing yielded a highly nuanced, mixed bag of results. While elim
 
 ### Key Observation: A Mixed Spectrum of Behavioral Shifts
 
-1. **The Deception Drop-Off Effect:** As hypothesized, a subset of models demonstrated a significant reduction in deceptive outputs once prompt bounds were explicitly clarified. When stripped of situational fuzziness, these models systematically pivoted toward aligned behavior, suggesting that their baseline "deception" was indeed driven by instruction ambiguity.
+1. **Deception Drop-Off Effect:** As hypothesized, a subset of models demonstrated a significant reduction in deceptive outputs once prompt bounds were explicitly clarified. When stripped of situational fuzziness, these models systematically pivoted toward aligned behavior, suggesting that their baseline "deception" was indeed driven by instruction ambiguity.
 
    | Claude 3 Haiku | GPT 4o mini |
    | :---: | :---: |
@@ -74,9 +68,7 @@ Our empirical testing yielded a highly nuanced, mixed bag of results. While elim
 
 ---
 
-## Results Analysis
-
-Our empirical replication and evaluation pipeline yielded unexpected behavioral anomalies and structural processing deviations when compared against the baseline benchmarks established by the original literature. 
+## Results Analysis 
 
 ### Key Observations & Replication Anomalies
 
@@ -86,49 +78,33 @@ Our empirical replication and evaluation pipeline yielded unexpected behavioral 
 
 ---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Limitations & Next Steps
 
-Transparency about boundaries is crucial for scientific reproducibility and responsible open-source disclosure in AI safety research.
-
 ### Limitations
-* **Compute / Model Constraints:** [e.g., Experiments were only scaled up to 13B parameter models due to hardware limitations.]
-* **Scope Barriers:** [e.g., The threat model exclusively evaluates English-language prompts and may not generalize to multilingual contexts.]
-* **Evaluation Nuances:** [e.g., Automated safety judges utilized in the pipeline may introduce false positives/negatives.]
 
-### Next Steps
-* **Future Work:** [e.g., Extending the attack framework to vision-language models (VLMs).]
-* **Defense Engineering:** [e.g., Developing an open-source system prompt patch to mitigate this vulnerability.]
+1. **Model Supersession & Legacy Disparity:** We were unable to re-test all models utilized in the original DeceptionBench paper. Several legacy variants have been superseded by more advanced, differently aligned architectures, which naturally skewed direct version-to-version replication attempts.
+2. **Compute & Financial Constraints:** Due to project budget limitations and API operational costs, high-tier frontier reasoning models—including the Anthropic Claude 3/3.5 series, Google Gemini 1.5/2.0 Pro, and xAI Grok—were excluded from this run. Our evaluations were restricted to more accessible, lightweight, or open-weight architectures.
+
+### Next Steps & Future Work
+
+1. **Error-Refusal Boundary Disambiguation:** Due to tight timeline constraints, our pipeline operated under the baseline assumption that an evaluation error is functionally equivalent to a model refusal. Because classifying formatting anomalies as deliberate refusals introduces behavioral ambiguity, a primary avenue of future work will focus on building dedicated parsing sandboxes to systematically isolate benign syntactical failures from actual safety triggers. 
+2. **Frontier LLM Judges:** While our current evaluation was restricted by resource costs and model supersession, extending this project will focus on testing flagship frontier reasoning models (Claude, Gemini Pro, Grok) to see if our findings hold at scale. Also, we plan to transition away from rigid regex-based scoring to highly standardized frontier model judges, where such a centralized evaluation workflow would aid in tackling refusal against errors ambiguity while also assisting to eliminate downstream parsing bugs.
+3. **Evaluation Scheming Risks:** While migrating to frontier LLM judges mitigates parsing issues, it introduces complex model-to-model interactions that present new safety risks. Future expansions will consider potential scheming behaviors and evaluate the setup against similar concerns including steganography and model collusion.
 
 ---
 
 ## Repository Structure
 
-Show the user how your existing code, notebooks, and outputs are organized so they can navigate the repository easily.
-
 ```text
-├── data/                 # Datasets, prompts, or evaluation suites used
-├── src/                  # Core source code for experiments
-│   ├── attacks.py        # Threat generation scripts
-│   ├── evaluators.py     # Safety evaluation metrics
-│   └── utils.py          # Helper functions
-├── notebooks/            # Jupyter notebooks for exploratory analysis
-├── outputs/              # Raw data outputs, logs, and generated plots
-├── requirements.txt      # Python dependencies
-└── README.md             # Project documentation
+├── data/                                 # Model-specific evaluation outputs (.csv)
+│   ├── combined_decept_[model].csv           # Deceptive prompt evaluation data
+│   └── combined_nondecept_[model].csv        # Disambiguated/Non-deceptive baseline data
+├── logs/                                 # Raw model execution and completion logs (.log)
+├── models/                               # Model-specific testing sandboxes and pipelines (.ipynb)
+├── res/                                  # Performance visualizations and evaluation charts (.png)
+│   ├── breakdown/                        # Individual metric breakdown plots per model
+│   └── combined/                         # Merged comparative evaluation plots
+└── README.md                             # Project documentation and executive summary
 ```
 
 ---
@@ -136,9 +112,9 @@ Show the user how your existing code, notebooks, and outputs are organized so th
 ## Citation & Reference
 
 ```bibtex
-@misc{yourname2026aisafety,
-  author = {Your Name and Collaborators},
-  title = {Title of Your AI Safety Research Project},
+@misc{jcheangbluedotdeception,
+  author = {Jared Cheang},
+  title = {Is Deception Goal Ambiguity},
   year = {2026},
   publisher = {GitHub},
   journal = {GitHub Repository},
