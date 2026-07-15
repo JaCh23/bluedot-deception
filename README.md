@@ -61,7 +61,7 @@ Our empirical testing yielded a highly nuanced, mixed bag of results. While elim
 2. **Diminished Effectiveness:** Conversely, several models showed persistent, near-identical levels of deception across both the baseline and disambiguated prompts. For these architectures, clarifying the bounds did not guarantee to have a strong impact on mitigating goal misalignment.
 
    #### 📊 Rigidity Visualizations
-   | GPT 3.5 Turbo | Qwen2.5 7B Instruct |
+   | GPT 3.5 Turbo | Qwen2.5 7B Instruct (Rigidity) |
    | :---: | :---: |
    | ![combined-openai_gpt_3.5_turbo.png](res/combined/combined-openai_gpt_3.5_turbo.png) | ![combined-qwen_qwen_2.5_7b_instruct.png](res/combined/combined-qwen_qwen_2.5_7b_instruct.png) |
    | *Figure 2a: GPT 3.5 Turbo.* | *Figure 2b: Qwen2.5 7B instruct (Rigidity).* |
@@ -69,7 +69,7 @@ Our empirical testing yielded a highly nuanced, mixed bag of results. While elim
 3. **Unexpected Errors & Refusals:** Certain models exhibited an extreme shift in output quality—resulting in almost 100% processing errors or blank refusals when exposed to the disambiguation layer. Curiously, this catastrophic failure mode occurred even when utilizing the exact same model versions evaluated in the original DeceptionBench paper, indicating extreme sensitivity to structural prompt modifications.
 
    #### 📊 Failure Mode Visualizations
-   | Gemini 2.5 Flash | Qwen2.5 7B Instruct |
+   | Gemini 2.5 Flash | Qwen2.5 7B Instruct (Refusals) |
    | :---: | :---: |
    | ![combined-google_gemini_2.5_flash](res/combined/combined-google_gemini_2.5_flash.png) | ![combined-qwen_qwen_2.5_7b_instruct.png](res/combined/combined-qwen_qwen_2.5_7b_instruct.png) |
    | *Figure 3a: Gemini 2.5 Flash.* | *Figure 2b: Qwen2.5 7B instruct (Refusals).* |
