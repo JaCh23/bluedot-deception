@@ -53,18 +53,24 @@ Our empirical testing yielded a highly nuanced, mixed bag of results. While elim
 1. **The Deception Drop-Off Effect:** As hypothesized, a subset of models demonstrated a significant reduction in deceptive outputs once prompt bounds were explicitly clarified. When stripped of situational fuzziness, these models systematically pivoted toward aligned behavior, suggesting that their baseline "deception" was indeed driven by instruction ambiguity.
 
    #### 📊 Drop-Off Visualizations
+   | Claude 3 Haiku | GPT 4o mini |
+   | :---: | :---: |
    | ![combined-anthropic_claude_3_haiku](res/combined/combined-anthropic_claude_3_haiku.png) | ![combined-openai_gpt_4o_mini](res/combined/combined-openai_gpt_4o_mini.png) |
    | *Figure 1a: Claude 3 Haiku.* | *Figure 1b: GPT 4o mini.* |
 
 2. **Diminished Effectiveness:** Conversely, several models showed persistent, near-identical levels of deception across both the baseline and disambiguated prompts. For these architectures, clarifying the bounds did not guarantee to have a strong impact on mitigating goal misalignment.
 
    #### 📊 Rigidity Visualizations
+   | GPT 3.5 Turbo | Qwen2.5 7B Instruct |
+   | :---: | :---: |
    | ![combined-openai_gpt_3.5_turbo.png](res/combined/combined-openai_gpt_3.5_turbo.png) | ![combined-qwen_qwen_2.5_7b_instruct.png](res/combined/combined-qwen_qwen_2.5_7b_instruct.png) |
    | *Figure 2a: GPT 3.5 Turbo.* | *Figure 2b: Qwen2.5 7B instruct (Rigidity).* |
 
 3. **Unexpected Errors & Refusals:** Certain models exhibited an extreme shift in output quality—resulting in almost 100% processing errors or blank refusals when exposed to the disambiguation layer. Curiously, this catastrophic failure mode occurred even when utilizing the exact same model versions evaluated in the original DeceptionBench paper, indicating extreme sensitivity to structural prompt modifications.
 
    #### 📊 Failure Mode Visualizations
+   | Gemini 2.5 Flash | Qwen2.5 7B Instruct |
+   | :---: | :---: |
    | ![combined-google_gemini_2.5_flash](res/combined/combined-google_gemini_2.5_flash.png) | ![combined-qwen_qwen_2.5_7b_instruct.png](res/combined/combined-qwen_qwen_2.5_7b_instruct.png) |
    | *Figure 3a: Gemini 2.5 Flash.* | *Figure 2b: Qwen2.5 7B instruct (Refusals).* |
 
