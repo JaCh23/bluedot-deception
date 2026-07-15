@@ -2,17 +2,29 @@
 
 ***
 
-# [Project Title: e.g., Evaluating Jailbreak Vulnerabilities in Large Language Models]
+# BlueDot Technical AI Safety Project: Is Deception Goal Ambiguity?
 
-A brief, 2-3 sentence high-level summary of your research project. Explain what AI safety problem you are tackling (e.g., alignment, robustness, evaluation steering), your core hypothesis, and the primary outcome or discovery of your work.
+[TODO] A brief, 2-3 sentence high-level summary of your research project. Explain what AI safety problem you are tackling (e.g., alignment, robustness, evaluation steering), your core hypothesis, and the primary outcome or discovery of your work.
 
 ---
 
 ## Overview & Motivation
 
-Provide a deeper dive into the research context here. 
-- **The Problem:** Why does this specific AI safety risk matter? What are the existing gaps in current alignment, defense, or auditing techniques?
-- **Our Approach:** How did you design your experiments or frameworks to address this specific threat model? What methodology guided your code implementation?
+This research project investigates whether observed deceptive behaviors in advanced AI systems stem from genuine goal misalignment or if they are largely an artifact of **instruction ambiguity** and hyper-capable instruction-following.
+
+### The Problem: Deception vs. Instruction Following
+Recent literature highlights growing concerns around AI deception, particularly when models prioritize *logical consistency* over external *correctness* to maintain a false narrative, as detailed in [Park et al. (2023)](https://arxiv.org/pdf/2308.14752). While frameworks like the Belief-Desire-Intention (BDI) model explored by [Kano et al. (2025)](https://aclanthology.org/2025.aiwolfdial-1.3.pdf) provide robust agent-modeling tools to analyze these interactions, the core behavioral driver remains highly debated.
+
+We draw a direct parallel here to the literature on **shutdown resistance**:
+
+* **Apparent Misalignment:** Several existing works demonstrate emerging self-preservation behaviors in agents ([Palisade Research](https://palisaderesearch.org/blog/shutdown-resistance); [Perez et al., 2025](https://arxiv.org/pdf/2509.14260)).
+* **The Ambiguity Counter-Argument:** Conversely, mechanistic work by [Neel Nanda (2025)](https://www.alignmentforum.org/posts/wnzkjSmrgWZaBa2aC/self-preservation-or-instruction-ambiguity-examining-the?utm_source=bluedot-impact) reveals that "self-preservation" behaviors can drop to near 0% when instruction ambiguity is completely resolved. Similarly, research shows that alleged adversarial intent is often muddled by agent misinterpretation or overeagerness to fulfill a poorly bounded prompt ([Hubinger et al., 2026](https://arxiv.org/abs/2605.30322)).
+
+### Our Core Research Question
+> **Could apparent AI deception be driven by the exact same mechanism as shutdown resistance—hampered by prompt ambiguity rather than a malicious intent to deceive?**
+
+### Our Approach
+Working under the operational definition that deception constitutes *deliberate goal misalignment*, we isolate variables of ambiguity to see if reducing linguistic fuzziness systematically mitigates or dissolves deceptive behaviors in complex reasoning tasks.
 
 ---
 
